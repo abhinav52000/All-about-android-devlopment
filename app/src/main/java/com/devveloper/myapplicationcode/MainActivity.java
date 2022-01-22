@@ -1,8 +1,11 @@
 package com.devveloper.myapplicationcode;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,21 +39,11 @@ public class MainActivity extends AppCompatActivity {
                     spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                            String name= adapterView.getItemAtPosition(i).toString();
+                            String name = adapterView.getItemAtPosition(i).toString();
                             if(i==0)
-                            {
-                                Snackbar.make(linear,"Hey it seems you have not selected anything",Snackbar.LENGTH_INDEFINITE).setAction("x", new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-
-                                    }
-                                }).show();
-                            }
-//                                Snackbar.make(linear, "Hey it seems you have not selected anything",Snackbar.LENGTH_LONG).show();
-//                                This is used inside if clause above when you are only doing it for small time or a bit more long time but you want to show your message for long then.
-//                            In short it is an alterantive of toast as well.
+                                Toast.makeText(getApplicationContext(), "Please Select a country", Toast.LENGTH_SHORT).show();
                             else
-                                result.setText(name);
+                                showDialogMessage(name);
                         }
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
@@ -59,4 +52,22 @@ public class MainActivity extends AppCompatActivity {
                     });
 
                 }
-            }
+
+    private void showDialogMessage(String name1) {
+        AlertDialog.Builder alertdialog=new AlertDialog.Builder(this);
+        alertdialog.setTitle("Confirm:").setMessage("You selected your country "+name1)
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        dialog.cancel();
+                    }
+                })
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        result.setText(name1);
+                    }
+                }).show();
+        alertdialog.create();
+    }
+}
