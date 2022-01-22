@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">My Application code</string>
     <string-array name="country">
-        <item>Show Country List</item>
+        <item>Country List</item>
         <item>India</item>
         <item>china</item>
         <item>saudi arab</item>
@@ -12,6 +12,9 @@
         <item>cannada</item>
         <item>mexico</item>
         <item>germany</item>
+        <item>France</item>
+        <item>brazil</item>
+        <item>izrael</item>
 
 
 
