@@ -9,25 +9,33 @@
     android:background="@color/yellow"
     >
 
+    <ImageView
+        android:id="@+id/tasweer"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/down" />
+
     <EditText
         android:id="@+id/namtera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter your Name"
-        android:inputType="textPersonName"
-        android:textSize="25dp"
-        android:background="@color/white"
         android:layout_margin="50dp"
-/>
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Enter this person's Name"
+        android:textAlignment="center"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/checkwla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
-
-        android:text="Check Access" />
+        android:text="Check Access"
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/jwabmera"
@@ -35,9 +43,11 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="50dp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="Permission status"
-        android:background="@color/white"
+        android:textAlignment="center"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:textSize="25dp" />
 </androidx.appcompat.widget.LinearLayoutCompat>
