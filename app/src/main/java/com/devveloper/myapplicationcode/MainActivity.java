@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,11 +34,10 @@ public class MainActivity extends AppCompatActivity {
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                             String name= adapterView.getItemAtPosition(i).toString();
                             if(i==0)
-                                result.setText("Select Country First");
+                                Toast.makeText(getApplicationContext(),"Select Country First",Toast.LENGTH_LONG).show();
                             else
                                 result.setText(name);
                         }
-
                         @Override
                         public void onNothingSelected(AdapterView<?> adapterView) {
                                 result.setText("Select Your Country");

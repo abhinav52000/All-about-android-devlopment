@@ -39,7 +39,7 @@
         android:id="@+id/resulte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Selection"
+        android:text=" "
         android:textColor="@color/black"
         android:textSize="25dp"
         android:layout_marginTop="100dp"
