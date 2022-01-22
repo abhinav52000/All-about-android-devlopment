@@ -1,60 +1,61 @@
 package com.devveloper.myapplicationcode;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 
-import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
+
 
 public class MainActivity extends AppCompatActivity {
+    RadioGroup radioGroup;
+    RadioButton red1,yellow1,green1;
+    ArrayAdapter adapter;
+    Spinner spinner;
+    LinearLayoutCompat linear;
 
-    TextView sapna;
-    Button button1;
-    EditText apna;
-    ImageView dekh;
-    String me="Abhinav",check;
-    int count=0;
-    @SuppressLint("ResourceAsColor")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    Button ok;
+                @Override
+                protected void onCreate(Bundle savedInstanceState) {
+                    super.onCreate(savedInstanceState);
+                    setContentView(R.layout.activity_main);
 
-        apna=findViewById(R.id.namtera);
-        sapna=findViewById(R.id.jwabmera);
-        button1=findViewById(R.id.checkwla);
-        dekh=findViewById(R.id.tasweer);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                check=apna.getText().toString();
+                    radioGroup=findViewById(R.id.buttonid);
+                    red1=findViewById(R.id.red);
+                    yellow1=findViewById(R.id.yellow);
+                    green1=findViewById(R.id.green);
+                    linear=findViewById(R.id.layoutme);
+                    ok=findViewById(R.id.button);
+                    ok.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if(green1.isChecked())
+                            {
 
-                if(me.equals(check))
-                {
-                    sapna.setText("Permission granted");
-                    dekh.setImageResource(R.drawable.img20211124021322);
-                    count=0;
-                }
-                else
-                {
-                    if (count==5) {
-                        sapna.setText("This IP is blocked");
-                        System.exit(1);
-                    }
-                    sapna.setText("Try once again 😊"+count);
-                    dekh.setImageResource(R.drawable.down);
-                    ++count;
+                                    linear.setBackgroundColor(Color.GREEN);
+                            }
+                            else if(red1.isChecked())
+                            {
+
+                                    linear.setBackgroundColor(Color.RED);
+                            }
+                            else if(yellow1.isChecked())
+                            {
+
+                                    linear.setBackgroundColor(Color.YELLOW);
+                            }
+                        }
+                    });
+
+
+
+
                 }
             }
-
-        });
-
-
-
-
-    }
-}

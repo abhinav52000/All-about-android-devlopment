@@ -2,52 +2,50 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@color/yellow"
-    >
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/tasweer"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/down" />
 
-    <EditText
-        android:id="@+id/namtera"
+    <RadioGroup
+        android:id="@+id/buttonid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:hint="Enter this person's Name"
-        android:textAlignment="center"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textSize="25dp" />
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        >
+
+        <RadioButton
+            android:id="@+id/red"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RED"
+            android:textSize="30dp"/>
+
+        <RadioButton
+            android:id="@+id/yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="YELLOW"
+            android:textSize="30dp"/>
+
+        <RadioButton
+            android:id="@+id/green"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GREEN"
+            android:textSize="30dp"/>
+    </RadioGroup>
 
     <Button
-        android:id="@+id/checkwla"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="120dp"
-        android:text="Check Access"
-        android:textAlignment="center"/>
-
-    <TextView
-        android:id="@+id/jwabmera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
+        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="50dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:hint="Permission status"
-        android:textAlignment="center"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textSize="25dp" />
+        android:text="Button" />
 </androidx.appcompat.widget.LinearLayoutCompat>
