@@ -10,42 +10,40 @@
     tools:context=".MainActivity">
 
 
-    <RadioGroup
-        android:id="@+id/buttonid"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Select Your Country"
+            android:textSize="25dp"
+            android:textColor="@color/black"/>
+
+        <Spinner
+            android:id="@+id/spinnere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autofillHints="Enter the country name"
+            android:spinnerMode="dropdown" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resulte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="200dp"
-        >
+        android:text="Your Selection"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"/>
 
-        <RadioButton
-            android:id="@+id/red"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RED"
-            android:textSize="30dp"/>
 
-        <RadioButton
-            android:id="@+id/yellow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="YELLOW"
-            android:textSize="30dp"/>
-
-        <RadioButton
-            android:id="@+id/green"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="GREEN"
-            android:textSize="30dp"/>
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginTop="50dp"
-        android:text="Button" />
 </androidx.appcompat.widget.LinearLayoutCompat>

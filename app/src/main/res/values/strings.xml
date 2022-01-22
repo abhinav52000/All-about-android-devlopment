@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">My Application code</string>
-    <string name="name">TextView</string>
+    <string-array name="country">
+        <item>Show Country List</item>
+        <item>India</item>
+        <item>china</item>
+        <item>saudi arab</item>
+        <item>uae</item>
+        <item>America</item>
+        <item>russia</item>
+        <item>england</item>
+        <item>cannada</item>
+        <item>mexico</item>
+        <item>germany</item>
+
+
+
+
+    </string-array>
+
 </resources>

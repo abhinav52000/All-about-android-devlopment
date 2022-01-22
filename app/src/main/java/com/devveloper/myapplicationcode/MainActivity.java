@@ -1,61 +1,48 @@
 package com.devveloper.myapplicationcode;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-    RadioGroup radioGroup;
-    RadioButton red1,yellow1,green1;
-    ArrayAdapter adapter;
-    Spinner spinner;
-    LinearLayoutCompat linear;
 
-    Button ok;
+    TextView result;
+    Spinner spinner;
+    ArrayAdapter adapter;
+
                 @Override
                 protected void onCreate(Bundle savedInstanceState) {
                     super.onCreate(savedInstanceState);
                     setContentView(R.layout.activity_main);
 
-                    radioGroup=findViewById(R.id.buttonid);
-                    red1=findViewById(R.id.red);
-                    yellow1=findViewById(R.id.yellow);
-                    green1=findViewById(R.id.green);
-                    linear=findViewById(R.id.layoutme);
-                    ok=findViewById(R.id.button);
-                    ok.setOnClickListener(new View.OnClickListener() {
+
+                    adapter=ArrayAdapter.createFromResource(this, R.array.country,
+                            android.R.layout.simple_spinner_item);
+                    spinner=findViewById(R.id.spinnere);
+                    result=findViewById(R.id.resulte);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setAdapter(adapter);
+                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
-                        public void onClick(View view) {
-                            if(green1.isChecked())
-                            {
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                            String name= adapterView.getItemAtPosition(i).toString();
+                            if(i==0)
+                                result.setText("Select Country First");
+                            else
+                                result.setText(name);
+                        }
 
-                                    linear.setBackgroundColor(Color.GREEN);
-                            }
-                            else if(red1.isChecked())
-                            {
-
-                                    linear.setBackgroundColor(Color.RED);
-                            }
-                            else if(yellow1.isChecked())
-                            {
-
-                                    linear.setBackgroundColor(Color.YELLOW);
-                            }
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+                                result.setText("Select Your Country");
                         }
                     });
-
-
-
 
                 }
             }
