@@ -2,36 +2,58 @@ package com.devveloper.myapplicationcode;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.util.Log;
 
 
 public class MainActivity extends AppCompatActivity {
 
 
-                WebView webView;
 
                 @Override
                 protected void onCreate(Bundle savedInstanceState) {
                     super.onCreate(savedInstanceState);
                     setContentView(R.layout.activity_main);
-                    webView=findViewById(R.id.website);
-                    webView.setWebViewClient(new WebViewClient());
-                    webView.loadUrl("https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjHpf6Kxdb1AhWg_XMBHVYdB3UQPAgI");
+
+                    Log.d("Message","on_create");
+
+    }
 
 
-
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("Message","on_start");
     }
 
     @Override
-    public void onBackPressed() {
-        if (webView.canGoBack())
-        {
-            webView.goBack();
-        }
-        else {
-            super.onBackPressed();
-        }
+    protected void onResume() {
+        super.onResume();
+        Log.d("Message","on_resume");
     }
+
+    @Override
+    protected void onPause() {
+                    
+        super.onPause();
+        Log.d("Message","on_pause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("Message","on_stop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("Message","on_restart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("Message","On_Destroy");
+    }
+
 }
