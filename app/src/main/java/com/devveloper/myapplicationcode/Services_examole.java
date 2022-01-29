@@ -1,6 +1,7 @@
 package com.devveloper.myapplicationcode;
 
 
+import android.app.IntentService;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -8,11 +9,15 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-public class Services_examole extends Service {
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
+public class Services_examole extends IntentService {
+
+
+    /**
+     * @param name
+     * @deprecated
+     */
+    public Services_examole() {
+        super("name");
     }
 
     @Override
@@ -34,6 +39,11 @@ public class Services_examole extends Service {
     public void onDestroy() {
         super.onDestroy();
         Log.d("Service","Service is Stopped");
+    }
+
+    @Override
+    protected void onHandleIntent( Intent intent) {
+        Log.d("Service","On handle Intent method");
     }
 }
 
