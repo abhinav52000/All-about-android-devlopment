@@ -14,9 +14,6 @@
         android:theme="@style/Theme.MyApplicationCode"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".second_link_activity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
