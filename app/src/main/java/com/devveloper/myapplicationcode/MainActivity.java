@@ -1,38 +1,39 @@
 package com.devveloper.myapplicationcode;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
-
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class MainActivity extends AppCompatActivity {
 
-                Broadcaster_example br=new Broadcaster_example();
 
+                EditText editText;
+                Button button;
 
                 @Override
                 protected void onCreate(Bundle savedInstanceState) {
                     super.onCreate(savedInstanceState);
                     setContentView(R.layout.activity_main);
 
-    }
+                    editText=findViewById(R.id.edittext);
+                    button=findViewById(R.id.secondlink);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        IntentFilter filer = new IntentFilter();
-        filer.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
-        this.registerReceiver(br, filer);
-    }
+                            String name=editText.getText().toString();
+                            Intent intent= new Intent(MainActivity.this,Second_activity.class);
+                            intent.putExtra("Keyword",name);
+                            startActivity(intent);
+                        }
+                    });
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        this.unregisterReceiver(br);
+
+
     }
 }
