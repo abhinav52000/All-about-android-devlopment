@@ -3,27 +3,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/yellow">
 
     <EditText
         android:id="@+id/edittext"
         android:inputType="textLongMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="100dp"
+        android:layout_margin="50dp"
         android:minHeight="48dp"
         android:padding="5dp"
         android:hint="Enter you name"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
         android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:hint="Your Message"
+        android:minHeight="200dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"/>
+
     <Button
         android:id="@+id/secondlink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go to second Activity"
-        android:textSize="15dp"
-        android:layout_marginTop="50dp"
+        android:text="Increase Count"
+        android:textSize="20dp"
+        android:layout_marginTop="15dp"
         android:background="@color/black"
         android:textColor="@color/white"/>
+
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Save data for later"
+        android:textSize="20dp"
+        android:textColorHint="@color/black"/>
 
 
 </LinearLayout>
