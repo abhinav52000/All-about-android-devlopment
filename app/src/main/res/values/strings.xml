@@ -1,24 +1,9 @@
 <resources>
-    <string name="app_name">My Application code</string>
-    <string-array name="country">
-        <item>Country List</item>
-        <item>India</item>
-        <item>china</item>
-        <item>saudi arab</item>
-        <item>uae</item>
-        <item>America</item>
-        <item>russia</item>
-        <item>england</item>
-        <item>cannada</item>
-        <item>mexico</item>
-        <item>germany</item>
-        <item>France</item>
-        <item>brazil</item>
-        <item>izrael</item>
-
-
-    </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name" translatable="true" >My Application code</string>
+    <string name="button_value" translatable="true">Increase Count</string>
+    <string name="your_name" translatable="true">Enter Your Name</string>
+    <string name="toast" translatable="true">The Data is saved in memory</string>
+    <string name="check" translatable="true">save data for later</string>
+    <string name="Message">Write your message</string>
 
 </resources>

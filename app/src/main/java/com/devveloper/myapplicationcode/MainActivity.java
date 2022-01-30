@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                      editor.putBoolean("ischecked1",ischecked);
                      editor.putInt("count1",count);
                      editor.commit();
-                     Toast.makeText(getApplicationContext(), "Data is saved", Toast.LENGTH_LONG).show();
+                     Toast.makeText(getApplicationContext(),R.string.toast, Toast.LENGTH_LONG).show();
 
     }
     public void retrive_Data(){

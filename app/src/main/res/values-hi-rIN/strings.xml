@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">मेरा आवेदन कोड</string>
+    <string name="button_value">गिनती बढ़ाएँ</string>
+    <string name="your_name">अपना नाम दर्ज करें</string>
+    <string name="toast">डेटा मेमोरी में सहेजा जाता है</string>
+    <string name="check">बाद के लिए डेटा सहेजें</string>
+    <string name="Message">अपना संदेश लिखें</string>
+</resources>
